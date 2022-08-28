@@ -33,7 +33,7 @@ $imgtitle = $data->{"images"}[0]->{"copyright"};
 $imglink = $data->{"images"}[0]->{"copyrightlink"};
 //判断是否只获取图片信息
 if ($_GET['info']==='true') {
-  echo "{title:".$imgtitle.",url:".$imgurl.",link:".$imglink.",time:".$imgtime."}";
+  echo "{title:".$imgtitle.",url:".$imgurl.",link:".urldecode($imglink).",time:".$imgtime."}";
 }else{
   //若不是则跳转url
   header("Location: $imgurl");
